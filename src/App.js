@@ -5,8 +5,15 @@ import Authentication from "./Pages/Authentication/Authentication";
 import Category from './Pages/Category/Category';
 import CategoryProduct from "./Pages/CategoryProducts/CategoryProducts";
 import Checkout from './Pages/Checkout/Checkout';
+import { useEffect } from "react";
+import { connect } from 'react-redux';
+import { firebaseAuthListener } from './Redux/auth/authActions';
 
-function App() {
+function App({firebaseAuthListener}) {
+  useEffect(() => {
+// CDM
+  firebaseAuthListener()
+  },[firebaseAuthListener])
   return (
     <div>
       <Switch>
@@ -20,4 +27,8 @@ function App() {
   );
 }
 
-export default App;
+var actions = {
+  firebaseAuthListener
+}
+
+export default connect(null,actions)(App);
