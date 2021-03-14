@@ -74,7 +74,7 @@ export var googleSignin = () => async (dispatch) => {
     console.log(error);
   }
 };
-// app auth state (centeralize auth manager for our app)
+// app auth state (centeralize auth manager for our app )
 export var firebaseAuthListener = () => async (dispatch) => {
   try {
     firebase.auth().onAuthStateChanged(async function (user) {
