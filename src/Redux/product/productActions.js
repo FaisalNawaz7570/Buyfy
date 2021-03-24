@@ -1,7 +1,8 @@
 import { v4 as uuid } from "uuid";
 import { firestore, serverTimestamp, storage } from "./../../Firebase/Firebase";
+import { CLEAR_PRODUCTS, SET_PRODUCTS } from "./productConstants";
 
-
+//admin side stuff
 export var uploadProduct = (productObj) => async () => {
   try {
     // console.log(productObj);
@@ -26,16 +27,66 @@ export var uploadProduct = (productObj) => async () => {
         //will triger after complition
         var downloadURL = await imageRef.getDownloadURL();
         //2- modify product Object with coverPhoto url and createdAt
-        productObj.coverPhoto = downloadURL
-        productObj.createdAt = serverTimestamp()
-        productObj.cost = parseFloat(productObj.cost)
-        productObj.quantity = parseFloat(productObj.quantity)
-        console.log(productObj)
+        productObj.coverPhoto = downloadURL;
+        productObj.createdAt = serverTimestamp();
+        productObj.cost = parseFloat(productObj.cost);
+        productObj.quantity = parseInt(productObj.quantity);
+        console.log(productObj);
         //3- create doc in firestore
-        await firestore.collection("products").add(productObj)
+        await firestore.collection("products").add(productObj);
       }
     );
   } catch (error) {
     console.log(error);
   }
 };
+
+export var fetchProducts = () => async (dispatch) => {
+  try {
+    var query = await firestore.collection("products").get();
+    var products = [];
+    query.docs.forEach((doc) => {
+      products.push(doc.data());
+    });
+
+    dispatch({
+      type: SET_PRODUCTS,
+      payload: {
+        products,
+      },
+    });
+  } catch (error) {
+    console.log(error);
+  }
+};
+
+export var fetchCategoryProducts = (category) => async (dispatch) => {
+  try {
+    var query = await firestore
+      .collection("products")
+      .where("category", "==", category)
+      .get();
+    var products = [];
+    query.docs.forEach((doc) => {
+      products.push(doc.data());
+    });
+    dispatch({
+      type: SET_PRODUCTS,
+      payload: {
+        products,
+      },
+    });
+  } catch (error) {
+    console.log(error);
+  }
+};
+
+export var clearProducts = () => async (dispatch) => {
+  try {
+    dispatch({
+      type: CLEAR_PRODUCTS
+    })
+  } catch (error) {
+    console.log(error)
+  }
+}

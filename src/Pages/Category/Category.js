@@ -1,11 +1,23 @@
-import React from "react";
+import React, { useEffect } from "react";
+import CategoryList from "../../Components/CategoryList/CategoryList";
+import { connect } from 'react-redux';
+import { clearProducts } from './../../Redux/product/productActions';
 
-const Category = () => {
+const Category = ({clearProducts}) => {
+  useEffect(() => {
+    return () => {
+      // CWU
+      clearProducts()
+    }
+  },[])
   return (
     <div>
       <h1>Category Page</h1>
+      <CategoryList />
     </div>
   );
 };
-
-export default Category;
+var actions = {
+  clearProducts
+}
+export default connect(null,actions)(Category);

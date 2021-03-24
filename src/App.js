@@ -8,6 +8,7 @@ import Checkout from './Pages/Checkout/Checkout';
 import { useEffect } from "react";
 import { connect } from 'react-redux';
 import { firebaseAuthListener } from './Redux/auth/authActions';
+import Navbar from './Components/Navbar/Navbar';
 import Test from './Pages/Test/Test';
 
 function App({firebaseAuthListener}) {
@@ -17,13 +18,14 @@ function App({firebaseAuthListener}) {
   },[firebaseAuthListener])
   return (
     <div>
+      <Navbar/>
       <Switch>
         <Route path="/" component={Home} exact />
         <Route path="/authentication" component={Authentication} exact />
         <Route path="/category" component={Category} exact />
-        <Route path="/category-products" component={CategoryProduct} exact />
+        <Route path="/category-products/:category" component={CategoryProduct} exact />
         <Route path="/checkout" component={Checkout} exact />
-        <Test path="/test" component={Test} />
+        <Route path="/test" component={Test} />
       </Switch>
     </div>
   );
