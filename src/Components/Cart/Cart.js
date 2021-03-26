@@ -1,4 +1,5 @@
 import React from "react";
+import { Link } from "react-router-dom";
 import CartList from "../CartList/CartList";
 
 const Cart = () => {
@@ -6,7 +7,9 @@ const Cart = () => {
     <div>
       <h1>cart</h1>
       <CartList />
-      <button>CheckOut</button>
+      <Link to="/checkout">
+        <button>CheckOut</button>
+      </Link>
     </div>
   );
 };
