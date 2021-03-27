@@ -80,6 +80,15 @@ export var fetchCategoryProducts = (category) => async (dispatch) => {
     console.log(error);
   }
 };
+export var fetchSpecificProduct = (productId) => async (dispatch) => {
+  try {
+    var query = await firestore.collection("products").doc(productId).get()
+    var product = query.data()
+    return product
+  } catch (error) {
+    console.log(error)
+  }
+}
 
 export var clearProducts = () => async (dispatch) => {
   try {

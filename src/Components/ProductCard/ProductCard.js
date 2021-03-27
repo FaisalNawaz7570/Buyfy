@@ -1,5 +1,6 @@
 import React from "react";
 import { connect } from "react-redux";
+import { Link } from "react-router-dom";
 import { addProductToCart } from "./../../Redux/cart/cartActions";
 
 const ProductCard = ({
@@ -8,11 +9,11 @@ const ProductCard = ({
   deleteProductFromCart,
   ...product
 }) => {
-  var { title, cost } = product;
+  var { title, cost, id } = product;
   return (
     <div>
       <h3>
-        {title} - {`$${cost}`}
+        <Link to={`/product/${id}`}>{title} </Link>- {`$${cost}`}
         <button onClick={() => addProductToCart(product)}>Add to cart</button>
       </h3>
     </div>
