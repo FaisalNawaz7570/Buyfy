@@ -3,9 +3,9 @@ import {
   firestore,
   serverTimestamp,
   GoogleAuthProvider,
-} from "./../../Firebase/Firebase";
+} from "../../Firebase/Firebase";
 import { REMOVE_USER, SET_USER } from "./authConstants";
-import firebase from "./../../Firebase/Firebase";
+import firebase from "../../Firebase/Firebase";
 
 export var setUser = (user) => ({
   type: SET_USER,

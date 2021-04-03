@@ -12,6 +12,7 @@ const Cart = ({generateOrder}) => {
       <CartList />
 
       <button onClick = {generateOrder} >CheckOut</button>
+      
     </div>
   );
 };

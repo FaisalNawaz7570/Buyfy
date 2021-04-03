@@ -1,6 +1,6 @@
 import React from 'react'
 import { connect } from 'react-redux';
-import { googleSignin } from './../../Redux/auth/authActions';
+import { googleSignin } from '../../Redux/auth/authActions';
 
 const GoogleSigninBtn = ({googleSignin}) => {
     return (

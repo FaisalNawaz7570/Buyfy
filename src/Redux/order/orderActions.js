@@ -1,5 +1,5 @@
-import { firestore, serverTimestamp } from "./../../Firebase/Firebase";
-import myhistory from './../../myhistory/myhistory';
+import { firestore, serverTimestamp } from "../../Firebase/Firebase";
+import myhistory from '../../myhistory/myhistory';
 
 export var generateOrder = () => async (dispatch, getState) => {
   try {
