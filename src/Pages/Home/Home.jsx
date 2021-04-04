@@ -1,10 +1,14 @@
 import React from "react";
-import { auth } from "./../../Firebase/Firebase";
-
+import "./Home.css";
 const Home = () => {
   return (
-    <div>
-      <h1>Home Page</h1>
+    <div className="home">
+      <div className="homeLeft center">
+        <h1>Left</h1>
+      </div>
+      <div className="homeRight center">
+        <h1>Right</h1>
+      </div>
     </div>
   );
 };

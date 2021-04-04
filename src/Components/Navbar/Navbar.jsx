@@ -1,33 +1,42 @@
 import React from "react";
 import { Link } from "react-router-dom";
 import "./Navbar.css";
-const Navbar = () => {
+import Header from "./../Header/Header";
+import { connect } from 'react-redux';
+import { signout } from './../../Redux/auth/authActions';
+
+const MenuItem = ({ children, to="#", ...restProps }) => {
   return (
-    <div className="navbar">
-        <div className="logo">
-      <Link to="/">
-          <h2>Logo</h2>
-      </Link>
-        </div>
-      <div className="navItemsContainer">
-        <Link to="/category">
-          <div className="navItem">
-            <h3>Categories</h3>
-          </div>
-        </Link>
-        <Link to="/authentication">
-          <div className="navItem">
-            <h3>Auth</h3>
-          </div>
-        </Link>
-        <Link to="/test">
-          <div className="navItem">
-            <h3>Test</h3>
-          </div>
+    <div>
+      <div {...restProps} className="menuItem">
+        <Link to={to}>
+          <Header
+            style={{ cursor: "pointer", display: "inline" }}
+            fontSize={20}
+            fontWeight="bold"
+          >
+            {children}
+          </Header>
         </Link>
       </div>
     </div>
   );
 };
 
-export default Navbar;
+const Navbar = ({auth, signout}) => {
+  return (
+    <div className="navbar">
+      <MenuItem to="/">BUYFY</MenuItem>
+      <MenuItem to="/category">SHOP</MenuItem>
+      <MenuItem>CART</MenuItem>
+      {auth ? <MenuItem onClick={signout} to="/authentication">LOGOUT</MenuItem> : <MenuItem to="/authentication">LOGIN</MenuItem>}
+    </div>
+  );
+};
+var mapState = (state) => ({
+  auth: state.auth
+})
+var actions = {
+  signout
+}
+export default connect(mapState, actions)(Navbar);

@@ -1,14 +1,26 @@
-*{
-    margin: 0;
-    border: 0;
-    padding: 0;
-    
+* {
+  margin: 0;
+  border: 0;
+  padding: 0;
+  box-sizing: border-box;
 }
-a{
-    text-decoration: none;
-    color: inherit;
+.center{
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    flex-direction: column;
+    width: 100%;
+    height: 100%;
+}
+a {
+  text-decoration: none;
+  color: inherit;
 }
 :root {
-    --font-family-header: 'Roboto', sans-serif;
-    --font-family-paragraph: 'Open Sans', sans-serif;
+  --font-family-header: "Roboto", sans-serif;
+  --font-family-paragraph: "Open Sans", sans-serif;
+  --navbar-height: 75px;
+}
+.pagesContainer{
+    padding-top: var(--navbar-height);
 }
