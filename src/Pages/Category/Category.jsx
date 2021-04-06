@@ -2,6 +2,7 @@ import React, { useEffect } from "react";
 import CategoryList from "../../Components/CategoryList/CategoryList";
 import { connect } from 'react-redux';
 import { clearProducts } from './../../Redux/product/productActions';
+import "./Category.css"
 
 const Category = ({clearProducts}) => {
   useEffect(() => {
@@ -11,8 +12,8 @@ const Category = ({clearProducts}) => {
     }
   },[])
   return (
-    <div>
-      <h1>Category Page</h1>
+    <div className="category">
+      {/* <h1>Category Page</h1> */}
       <CategoryList />
     </div>
   );

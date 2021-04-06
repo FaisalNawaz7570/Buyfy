@@ -11,7 +11,7 @@ const MenuItem = ({ children, to="#", ...restProps }) => {
       <div {...restProps} className="menuItem">
         <Link to={to}>
           <Header
-            style={{ cursor: "pointer", display: "inline" }}
+            style={{ cursor: "pointer", display: "inline", color:"white" }}
             fontSize={20}
             fontWeight="bold"
           >

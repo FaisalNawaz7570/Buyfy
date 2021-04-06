@@ -5,6 +5,7 @@ import {
   clearProducts,
 } from "./../../Redux/product/productActions";
 import ProductCard from "./../../Components/ProductCard/ProductCard";
+import "./CategoryProducts.css";
 
 const CategoryProduct = ({
   match: {
@@ -18,16 +19,18 @@ const CategoryProduct = ({
     //CDM
     fetchCategoryProducts(category);
     return () => {
-      clearProducts()
+      clearProducts();
     };
   }, []);
   console.log(products);
   return (
-    <div>
-      <h1>{category} Product Page</h1>
-      {products.map((product) => (
-        <ProductCard key={product.title} {...product} />
-      ))}
+    <div className="category-products">
+      <div className="category-product-list">
+        <h1 className="category-text additional-category-text">{category}</h1>
+        {products.map((product) => (
+          <ProductCard key={product.title} {...product} />
+        ))}
+      </div>
     </div>
   );
 };

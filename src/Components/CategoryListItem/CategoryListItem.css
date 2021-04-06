@@ -1,0 +1,19 @@
+.category-list-item{
+    display: grid;
+    /* grid-template-columns: repeat(4, 1fr); */
+    grid-template-columns: repeat(auto-fit, minmax(30em, 1fr));
+    row-gap: 10em;
+    justify-items: center;
+    margin-bottom: 15em;
+    position: relative;
+}
+.category-text{
+    position: absolute;
+    top: 0;
+    left: 50%;
+    transform: translateX(-50%) translateY(-70%);
+    font-size: 200px;
+    letter-spacing: 45px;
+    color: rgb(229, 226, 226);
+    cursor: pointer;
+}

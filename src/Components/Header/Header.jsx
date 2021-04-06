@@ -7,11 +7,11 @@ var fontWeightEstimater = (weightStr) => {
       return 300;
     case "regular":
       return 400;
-    case "semiBold":
+    case "semi-bold":
       return 500;
     case "bold":
       return 700;
-    case "extraBold":
+    case "extra-bold":
       return 900;
 
     default:
