@@ -35,7 +35,7 @@ const Test = ({ uploadProduct }) => {
 
   return (
     <div style={{fontSize: "62.5%"}}>
-      <form onSubmit={handleSubmit}>
+      {/* <form onSubmit={handleSubmit}>
         <input
           onChange={(e) => setCategory(e.target.value)}
           type="text"
@@ -74,7 +74,7 @@ const Test = ({ uploadProduct }) => {
         <br />
         <input onChange={(e) => setCoverPhoto(e.target.files[0])} type="file" placeholder="cover photo" /> <br />
         <button type="submit">submit</button>
-      </form>
+      </form> */}
       <Cart />
       {/* <Header fontSize={32} fontWeight="extraBold" >This is My Header</Header>
       <Header fontSize={16} fontWeight="bold" >This is My Header No 2</Header>
