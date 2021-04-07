@@ -1,6 +1,7 @@
 .checkout-list-item{
     display: grid;
     grid-template-columns: repeat(4,1fr);
+    padding: 2em;
 }
 .chekout-item-product-image{
     width: 100px;

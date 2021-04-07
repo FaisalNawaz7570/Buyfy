@@ -14,7 +14,7 @@ ReactDOM.render(
   <React.StrictMode>
     <Router history={myhistory} >
       <Provider store={store}>
-        <App />
+        <App  />
       </Provider>
     </Router>
   </React.StrictMode>,

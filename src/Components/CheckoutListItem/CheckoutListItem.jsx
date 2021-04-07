@@ -15,13 +15,13 @@ const CheckoutListItem = ({
   deleteProductFromCart,
   ...product
 }) => {
-  var { title, cost, quantity, id } = product;
+  var { title, cost, quantity, id, coverPhoto } = product;
   return (
     <div className="checkout-list-item">
       <div className="chekout-item-product">
-        <div className="chekout-item-product-image"></div>
+        <div className="chekout-item-product-image" style={{background:`url(${coverPhoto})`, backgroundSize: "100% 100%, cover"}}></div>
         <Paragraph fontSize={20} fontWeight="semi-bold">
-          Product Cart
+          {title}
         </Paragraph>
       </div>
       <div className="chekout-item-quantity center" style={{ flexFlow: "row" }}>
@@ -34,11 +34,12 @@ const CheckoutListItem = ({
             borderBottomLeftRadius: "30px",
             transform: "translateX(5px)",
           }}
+          onClick={() => addProductToCart(product)}
         >
           +
         </Button>
         <Button fontWeight="bold" color="black" background="white">
-          3
+          {quantity}
         </Button>
         <Button
           fontWeight="bold"
@@ -49,15 +50,16 @@ const CheckoutListItem = ({
             borderBottomRightRadius: "30px",
             transform: "translateX(-5px)",
           }}
+          onClick={() => removeProductFromCart(id)}
         >
           -
         </Button>
       </div>
       <div className="chekout-item-price center">
-        <Paragraph fontSize={20} fontWeight="semi-bold">$ 240</Paragraph>
+        <Paragraph fontSize={20} fontWeight="semi-bold">$ {cost}</Paragraph>
       </div>
       <div className="chekout-item-cross center">
-      <Paragraph style={{cursor: "pointer"}} fontSize={25} fontWeight="semi-bold">x</Paragraph>
+      <Paragraph style={{cursor: "pointer"}}  onClick={() => deleteProductFromCart(id)} fontSize={25} fontWeight="semi-bold">x</Paragraph>
 
       </div>
       {/* <h1>

@@ -12,11 +12,11 @@ const Checkout = ({ total }) => {
   return (
     <div className="checkout-page-container">
       <div className="checkout"> 
-        <Header fontSize={40} fontWeight="bold">Shopping Cart</Header>
+        <Header fontSize={35} fontWeight="bold">Shopping Cart</Header>
       <CheckoutList />
       <div className="checkout-bottom-content">
-      <Header fontSize={40} fontWeight="bold">Total: $ 240</Header>
-      <Button style={{justifySelf: "end", borderRadius: "30px"}} fontSize={25} fontWeight="semi-bold" background="white" color="black">Proceed & Pay</Button>
+      <Header fontSize={35} fontWeight="bold">Total: $ {total}</Header>
+      <Button style={{justifySelf: "end", borderRadius: "30px"}} fontSize={20} fontWeight="semi-bold" background="white" color="black">Proceed & Pay</Button>
       </div>
       {/* {shipFormShown && <OrderForm />}
       <button onClick={() => setShipFormShown(!shipFormShown)}>Proceed & Pay </button> */}
