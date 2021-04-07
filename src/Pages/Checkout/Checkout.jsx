@@ -1,18 +1,26 @@
-import React, {useState} from "react";
+import React, { useState } from "react";
 import CheckoutList from "../../Components/CheckoutList/CheckoutList";
 import { connect } from "react-redux";
 import { calculateTotal } from "./../../Utility/checkout";
 import OrderForm from "./../../Components/OrderForm/OrderForm";
+import "./Checkout.css";
+import Header from "../../Components/Header/Header";
+import Button from "../../Components/Button/Button";
 
 const Checkout = ({ total }) => {
-  var [shipFormShown, setShipFormShown] = useState(false)
+  var [shipFormShown, setShipFormShown] = useState(false);
   return (
-    <div>
-      <h1>Checkout Page</h1>
+    <div className="checkout-page-container">
+      <div className="checkout"> 
+        <Header fontSize={40} fontWeight="bold">Shopping Cart</Header>
       <CheckoutList />
-      <h3>total cost - {total}</h3>
-      {shipFormShown && <OrderForm />}
-      <button onClick={() => setShipFormShown(!shipFormShown)}>Proceed & Pay </button>
+      <div className="checkout-bottom-content">
+      <Header fontSize={40} fontWeight="bold">Total: $ 240</Header>
+      <Button style={{justifySelf: "end", borderRadius: "30px"}} fontSize={25} fontWeight="semi-bold" background="white" color="black">Proceed & Pay</Button>
+      </div>
+      {/* {shipFormShown && <OrderForm />}
+      <button onClick={() => setShipFormShown(!shipFormShown)}>Proceed & Pay </button> */}
+      </div>
     </div>
   );
 };

@@ -1,0 +1,20 @@
+.checkout-page-container{
+    font-size: 62.5%;
+    display: grid;
+    grid-template-columns: 70vw;
+    grid-template-rows: calc(100vh - var(--navbar-height));
+    justify-content: center;
+    background: limegreen;
+    /* padding-top: 15em; */
+}
+.checkout{
+    display: grid;
+    grid-template-rows: min-content 1fr min-content;
+    padding: 15em 0em;
+    row-gap: 3em;
+}
+.checkout-bottom-content{
+    display: grid;
+    grid-template-columns: repeat(2, 1fr);
+    justify-items: start;
+}
