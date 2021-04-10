@@ -77,6 +77,8 @@ export var googleSignin = () => async (dispatch) => {
       };
       await firestore.collection("users").doc(uid).set(userInfo);
     }
+    //navigate to homePage
+    myhistory.push("/")
   } catch (error) {
     console.log(error);
   }

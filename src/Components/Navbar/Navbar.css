@@ -5,12 +5,17 @@
   display: grid;
   grid-template-columns: 1fr repeat(4,min-content);
   padding: 0px 80px;
-  column-gap: 20px;
+  column-gap: 0px;
   align-content: center;
   font-size: 62.5%;
   position: fixed;
   top: 0;
   left: 0;
   z-index: 9999;
-  letter-spacing: 3px;
+  letter-spacing: 1.5px;
 }
+/* .menuItem:hover {
+  background: white;
+  transition: ease-in-out 100ms;
+  border-radius: 20px;
+} */

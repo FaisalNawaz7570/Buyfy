@@ -9,12 +9,12 @@ import Cart from "../Cart/Cart";
 const MenuItem = ({ children, to="#", ...restProps }) => {
   return (
     <div>
-      <div {...restProps} className="menuItem">
+      <div {...restProps} style={{padding: "0.8em 2em", cursor: "pointer"}} className="menuItem">
         <Link to={to}>
           <Header
-            style={{ cursor: "pointer", display: "inline", color:"white" }}
+            style={{ cursor: "pointer", display: "inline", color:"white", }}
             fontSize={20}
-            fontWeight="bold"
+            fontWeight="semi-bold"
           >
             {children}
           </Header>
@@ -31,7 +31,7 @@ const Navbar = ({auth, signout}) => {
       <MenuItem to="/">BUYFY</MenuItem>
       <MenuItem to="/category">SHOP</MenuItem>
       <MenuItem to="/test">TEST</MenuItem>
-      <div>
+      <div style={{padding: "0.8em 2em ",cursor: "pointer"}}>
       <Header
             style={{ cursor: "pointer", display: "inline", color:"white" }}
             fontSize={20}
