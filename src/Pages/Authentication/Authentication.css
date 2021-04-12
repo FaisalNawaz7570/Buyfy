@@ -3,12 +3,15 @@
     height: calc(100vh - var(--navbar-height));
     display: grid;
     grid-template-columns: repeat(2,1fr);
-    background: lime;
+    /* background: lime; */
     font-size: 62.5%;
+    
 }
 .auth-left{
-    background: magenta;
+    background: linear-gradient(to left, rgba(0,0,0,0.9),  rgba(0,0,0,0)), url(./../../assets/GettyImages-523127316-5a79c03aba617700367e3747.jpg);
+    background-size: 100% 100%, cover;
+    opacity: 70%;
 }
 .auth-right{
-    background: maroon;
+    background: white
 }

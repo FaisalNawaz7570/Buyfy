@@ -6,8 +6,9 @@
     grid-template-rows: min-content 1fr min-content;
     padding: 2em;
     row-gap: 0.5em;
-    transform: translateX(-8em);
+    transform: translateX(-3em);
     border-radius: 1rem;
+    box-shadow: black 3px 2px 15px 2px;
 }
 .auth-form-switcher{
     display: grid;
