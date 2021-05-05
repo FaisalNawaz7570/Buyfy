@@ -6,7 +6,7 @@ import {
 } from "../../Firebase/Firebase";
 import { REMOVE_USER, SET_USER } from "./authConstants";
 import firebase from "../../Firebase/Firebase";
-import myhistory from './../../myhistory/myhistory';
+import myhistory from "./../../myhistory/myhistory";
 
 export var setUser = (user) => ({
   type: SET_USER,
@@ -34,8 +34,7 @@ export var signup = ({ email, password, fullName }) => async (dispatch) => {
     await firestore.collection("users").doc(uid).set(userInfo);
 
     //navigate to homePage
-    myhistory.push("/")
-
+    myhistory.push("/");
   } catch (error) {
     console.log(error);
   }
@@ -46,7 +45,7 @@ export var signin = ({ email, password }) => async (dispatch) => {
     // signin user with auth
     await auth.signInWithEmailAndPassword(email, password);
     //navigate to homePage
-    myhistory.push("/")
+    myhistory.push("/");
   } catch (error) {
     console.log(error);
   }
@@ -78,7 +77,7 @@ export var googleSignin = () => async (dispatch) => {
       await firestore.collection("users").doc(uid).set(userInfo);
     }
     //navigate to homePage
-    myhistory.push("/")
+    myhistory.push("/");
   } catch (error) {
     console.log(error);
   }

@@ -2,10 +2,160 @@
     display: grid;
     grid-template-rows: minmax(calc(100vh - var(--navbar-height)), min-content);
     grid-template-columns: repeat(2, 1fr);
+    
 }
 .homeLeft{
-    background: yellowgreen;
+    /* background: yellowgreen; */
+    /* position: relative; */
 }
+
 .homeRight{
-    background: rgb(238, 203, 139);
+    position: relative;
+    background:white;
 }
+.product{
+    top: 0;
+    left: 0;
+    height: 100%;
+    width: 100%;
+    position: absolute;
+}
+.product1{
+    background-image: url(../../assets/home-images/Caps-home-side.png);
+    background-size: cover;
+    opacity: 0;
+    background-position-x: center;
+    animation: animationproduct1 20s ease-in-out infinite;
+}
+.product2{
+    background-image: url(../../assets/home-images/Hoodie-home-side.png);
+    background-size: 100% 100%,cover;
+    opacity: 0;
+    background-position-x: center;
+    animation: animationproduct2 20s ease-in-out infinite;
+}
+@keyframes animationproduct1{
+    0%{
+        opacity: 0;
+    }
+    2%{
+        opacity: 1;
+    }
+    48%{
+        opacity: 1;
+    }
+    50%{
+        opacity: 0;
+    }
+    100%{
+        opacity: 0;
+    }
+}
+@keyframes animationproduct2{
+    0%{
+        opacity: 0;
+    }
+    50%{
+        opacity: 0;
+    }
+    52%{
+        opacity: 1;
+    }
+    98%{
+        opacity: 1;
+    }
+    100%{
+        opacity: 0;
+    }
+}
+/* .product3{
+    background-image: url(../../assets/home-images/Caps-2-home-side.png);
+    background-size: cover;
+    opacity: 0;
+    background-position-x: center;
+    animation: animationproduct3 20s ease-in-out infinite;
+}
+.product4{
+    background-image: url(../../assets/home-images/Caps-4-home-side.png);
+    background-size: cover;
+    opacity: 0;
+    background-position-x: center;
+    animation: animationproduct4 20s ease-in-out infinite;
+}
+@keyframes animationproduct1{
+    0%{
+        opacity: 0;
+    }
+    1%{
+        opacity: 1;
+    }
+    25%{
+        opacity: 1;
+    }
+    26%{
+        opacity: 0;
+    }
+    50%{
+        opacity: 0;
+    }
+    100%{
+        opacity: 0;
+    }
+}
+@keyframes animationproduct2{
+    0%{
+        opacity: 0;
+    }
+    25%{
+        opacity: 0;
+    }
+    26%{
+        opacity: 1;
+    }
+    50%{
+        opacity: 1;
+    }
+    51%{
+        opacity: 0;
+    }
+    100%{
+        opacity: 0;
+    }
+}
+@keyframes animationproduct3{
+    0%{
+        opacity: 0;
+    }
+    50%{
+        opacity: 0;
+    }
+    51%{
+        opacity: 1;
+    }
+    75%{
+        opacity: 1;
+    }
+    76%{
+        opacity: 0;
+    }
+    100%{
+        opacity: 0;
+    }
+}
+@keyframes animationproduct4{
+    0%{
+        opacity: 0;
+    }
+    75%{
+        opacity: 0;
+    }
+    76%{
+        opacity: 1;
+    }
+    99%{
+        opacity: 1;
+    }
+    100%{
+        opacity: 0;
+    }
+} */

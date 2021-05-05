@@ -4,5 +4,6 @@
     grid-template-columns: 80vw;
     grid-template-rows: minmax(calc(100vh - var(--navbar-height)),min-content);
     justify-content: center;
+    background: linear-gradient(rgba(240, 237, 237, 0.9), rgba(252, 250, 250, 0));
     padding-top: 15em;
 }

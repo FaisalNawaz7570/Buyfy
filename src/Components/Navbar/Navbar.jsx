@@ -12,8 +12,8 @@ const MenuItem = ({ children, to="#", ...restProps }) => {
       <div {...restProps} style={{padding: "0.8em 2em", cursor: "pointer"}} className="menuItem">
         <Link to={to}>
           <Header
-            style={{ cursor: "pointer", display: "inline", color:"white", }}
-            fontSize={20}
+            style={{ cursor: "pointer", display: "inline", color:"black", }}
+            fontSize={18}
             fontWeight="semi-bold"
           >
             {children}
@@ -33,9 +33,9 @@ const Navbar = ({auth, signout}) => {
       <MenuItem to="/test">TEST</MenuItem>
       <div style={{padding: "0.8em 2em ",cursor: "pointer"}}>
       <Header
-            style={{ cursor: "pointer", display: "inline", color:"white" }}
-            fontSize={20}
-            fontWeight="bold"
+            style={{ cursor: "pointer", display: "inline", color:"black" }}
+            fontSize={18}
+            fontWeight="semi-bold"
             onClick={() => setNavbarVisibility(!isNavbarVisible)}
           >
             CART

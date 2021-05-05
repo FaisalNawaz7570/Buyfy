@@ -2,10 +2,11 @@ import React, { useState } from "react";
 import { connect } from "react-redux";
 import { uploadProduct } from "../../Redux/product/productActions";
 import Cart from "../../Components/Cart/Cart";
-// import Header from "./../../Components/Header/Header";
-// import Paragraph from './../../Components/Paragraph/Paragraph';
-// import Button from "../../Components/Button/Button";
+import Header from "./../../Components/Header/Header";
+import Paragraph from "./../../Components/Paragraph/Paragraph";
+import Button from "../../Components/Button/Button";
 import ProductCard from "../../Components/ProductCard/ProductCard";
+import { openModal } from "./../../Redux/modal/modalAction";
 
 const Test = ({ uploadProduct }) => {
   var [category, setCategory] = useState("");
@@ -34,7 +35,7 @@ const Test = ({ uploadProduct }) => {
   };
 
   return (
-    <div style={{fontSize: "62.5%"}}>
+    <div style={{ fontSize: "62.5%" }}>
       {/* <form onSubmit={handleSubmit}>
         <input
           onChange={(e) => setCategory(e.target.value)}
@@ -75,7 +76,7 @@ const Test = ({ uploadProduct }) => {
         <input onChange={(e) => setCoverPhoto(e.target.files[0])} type="file" placeholder="cover photo" /> <br />
         <button type="submit">submit</button>
       </form> */}
-      <Cart />
+      {/* <Cart /> */}
       {/* <Header fontSize={32} fontWeight="extraBold" >This is My Header</Header>
       <Header fontSize={16} fontWeight="bold" >This is My Header No 2</Header>
       <Header fontSize={46} fontWeight="semiBold" >This is My Header No 3</Header>
@@ -86,13 +87,20 @@ const Test = ({ uploadProduct }) => {
       <Paragraph fontSize={46} fontWeight="semiBold" >This is My Header No 3</Paragraph> */}
       {/* <Paragraph fontSize={46} fontWeight="regular" color="red" >This is My Header No 3</Paragraph>
       <Paragraph fontSize={38} fontWeight="light" color="grey" >This is My Header No 3</Paragraph>
-      <Button fontSize={32} fontWeight="bold" background="orange">Click Me and Click Me Again</Button> */} 
+      <Button fontSize={32} fontWeight="bold" background="orange">Click Me and Click Me Again</Button> */}
       {/* <ProductCard /> */}
-
+      <Button
+        onClick={() => 
+          openModal({ modalType: "testmodal", modalProps: { number: 23 } })
+        }
+      >
+        Open test modal
+      </Button>
     </div>
   );
 };
 var actions = {
   uploadProduct,
+  openModal,
 };
 export default connect(null, actions)(Test);
