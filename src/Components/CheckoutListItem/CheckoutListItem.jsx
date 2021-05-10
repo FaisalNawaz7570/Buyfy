@@ -20,34 +20,36 @@ const CheckoutListItem = ({
     <div className="checkout-list-item">
       <div className="chekout-item-product">
         <div className="chekout-item-product-image" style={{background:`url(${coverPhoto})`, backgroundSize: "100% 100%, cover"}}></div>
-        <Paragraph fontSize={20} fontWeight="semi-bold">
+        <Paragraph fontSize={18} fontWeight="semi-bold">
           {title}
         </Paragraph>
       </div>
       <div className="chekout-item-quantity center" style={{ flexFlow: "row" }}>
         <Button
-          fontWeight="bold"
+          fontWeight="semi-bold"
           color="black"
           background="white"
           style={{
             borderTopLeftRadius: "30px",
             borderBottomLeftRadius: "30px",
             transform: "translateX(5px)",
+            padding: "0.5em 1.2em"
           }}
           onClick={() => addProductToCart(product)}
         >
           +
         </Button>
-        <Button fontWeight="bold" color="black" background="white">
+        <Button style={{padding: "0.5em 1.2em"}} fontWeight="semi-bold" color="black" background="white">
           {quantity}
         </Button>
         <Button
-          fontWeight="bold"
+          fontWeight="semi-bold"
           color="black"
           background="white"
           style={{
             borderTopRightRadius: "30px",
             borderBottomRightRadius: "30px",
+            padding: "0.5em 1.2em",
             transform: "translateX(-5px)",
           }}
           onClick={() => removeProductFromCart(id)}
@@ -56,10 +58,10 @@ const CheckoutListItem = ({
         </Button>
       </div>
       <div className="chekout-item-price center">
-        <Paragraph fontSize={20} fontWeight="semi-bold">$ {cost}</Paragraph>
+        <Paragraph fontSize={18} fontWeight="semi-bold">$ {cost}</Paragraph>
       </div>
       <div className="chekout-item-cross center">
-      <Paragraph style={{cursor: "pointer"}}  onClick={() => deleteProductFromCart(id)} fontSize={25} fontWeight="semi-bold">x</Paragraph>
+      <Paragraph style={{cursor: "pointer"}}  onClick={() => deleteProductFromCart(id)} fontSize={20} fontWeight="semi-bold">x</Paragraph>
 
       </div>
       {/* <h1>

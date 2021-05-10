@@ -1,15 +1,29 @@
 .checkout-list {
   display: grid;
-  height: 50vh;
-  background: rgb(241, 216, 169);
+  height: 45vh;
+  background: lightgray;
   overflow-y: scroll;
-  /* row-gap: 1em; */
+  /* row-gap: 1.2em; */
   align-content: start;
-  
+  border-radius: 1.5em 0.5em 0.5em 1.5em;
+  /* padding: 2em; */
+}
+::-webkit-scrollbar {
+  width: 12px;
+}
+
+::-webkit-scrollbar-track {
+  -webkit-box-shadow: inset 0 0 6px rgb(77, 70, 70); 
+  border-radius: 10px;
+}
+
+::-webkit-scrollbar-thumb {
+  border-radius: 10px;
+  -webkit-box-shadow: inset 0 0 6px rgb(37, 31, 31); 
 }
 .checkout-list-item-extends {
   justify-items: center;
-  margin-bottom: 4em;
-  border-bottom: 2px solid black;
-  padding: 1em 0em;
+  margin-bottom: 1em;
+  border-bottom: 1px solid black;
+  padding: 1.5em 0em;
 }

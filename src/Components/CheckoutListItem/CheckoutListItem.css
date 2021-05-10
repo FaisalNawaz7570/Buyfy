@@ -1,15 +1,15 @@
-.checkout-list-item{
-    display: grid;
-    grid-template-columns: repeat(4,1fr);
-    padding: 2em;
+.checkout-list-item {
+  display: grid;
+  grid-template-columns: repeat(4, 1fr);
+  padding: 0.8em 2em;
 }
-.chekout-item-product-image{
-    width: 100px;
-    height: 100px;
-    background: lightslategrey;
-    margin-right: 2em ;
+.chekout-item-product-image {
+  width: 65px;
+  height: 65px;
+  /* background: lightslategrey; */
+  margin-right: 2em;
 }
-.chekout-item-product{
-    display: flex;
-    align-items: center;
+.chekout-item-product {
+  display: flex;
+  align-items: center;
 }

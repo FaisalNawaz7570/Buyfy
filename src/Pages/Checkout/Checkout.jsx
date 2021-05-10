@@ -6,19 +6,37 @@ import OrderForm from "./../../Components/OrderForm/OrderForm";
 import "./Checkout.css";
 import Header from "../../Components/Header/Header";
 import Button from "../../Components/Button/Button";
+import { openModal } from './../../Redux/modal/modalAction';
 
-const Checkout = ({ total }) => {
+const Checkout = ({ total, openModal }) => {
   var [shipFormShown, setShipFormShown] = useState(false);
   return (
     <div className="checkout-page-container">
-      <div className="checkout"> 
-        <Header fontSize={35} fontWeight="bold">Shopping Cart</Header>
-      <CheckoutList />
-      <div className="checkout-bottom-content">
-      <Header fontSize={35} fontWeight="bold">Total: $ {total}</Header>
-      <Button style={{justifySelf: "end", borderRadius: "30px"}} fontSize={20} fontWeight="semi-bold" background="white" color="black">Proceed & Pay</Button>
-      </div>
-      {/* {shipFormShown && <OrderForm />}
+      <div className="checkout">
+        <Header fontSize={28} fontWeight="bold">
+          Shopping Cart
+        </Header>
+        <CheckoutList />
+        <div className="checkout-bottom-content">
+          <Header fontSize={28} fontWeight="bold">
+            Total: $ {total}
+          </Header>
+          <Button
+            onClick={() =>
+              openModal({
+                modalType: "addressFormModal",
+              })
+            }
+            style={{ justifySelf: "end", borderRadius: "30px" }}
+            fontSize={18}
+            fontWeight="semi-bold"
+            background="lightBlue"
+            color="black"
+          >
+            Proceed & Pay
+          </Button>
+        </div>
+        {/* {shipFormShown && <OrderForm />}
       <button onClick={() => setShipFormShown(!shipFormShown)}>Proceed & Pay </button> */}
       </div>
     </div>
@@ -27,4 +45,7 @@ const Checkout = ({ total }) => {
 var mapState = (state) => ({
   total: calculateTotal(state.cart),
 });
-export default connect(mapState)(Checkout);
+var actions = {
+  openModal
+}
+export default connect(mapState, actions)(Checkout);

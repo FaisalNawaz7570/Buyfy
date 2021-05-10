@@ -9,9 +9,9 @@ const CheckoutList = ({cartItems}) => {
   return (
     <div className="checkout-list">
       <div className="checkout-list-item checkout-list-item-extends">
-        <Paragraph fontWeight="semi-bold" fontSize={20}>Product</Paragraph>
-        <Paragraph fontWeight="semi-bold" fontSize={20}>Quantity</Paragraph>
-        <Paragraph fontWeight="semi-bold" fontSize={20}>Price</Paragraph>
+        <Paragraph fontWeight="semi-bold" fontSize={18}>Product</Paragraph>
+        <Paragraph fontWeight="semi-bold" fontSize={18}>Quantity</Paragraph>
+        <Paragraph fontWeight="semi-bold" fontSize={18}>Price</Paragraph>
       </div>
       {cartItems.map((item) => <CheckoutListItem key={item.id} {...item}/>)}
     </div>
