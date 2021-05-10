@@ -1,9 +1,7 @@
 import { CLOSE_MODAL, OPEN_MODAL } from "./modalConstants";
 
 const initialState = null;
-
 var modalReducer = (state = initialState, { type, payload }) => {
-  console.log(type);
   switch (type) {
     case OPEN_MODAL:
       return { modalType: payload.modalType, modalProps: payload.modalProps };

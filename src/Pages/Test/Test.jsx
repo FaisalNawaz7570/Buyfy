@@ -8,7 +8,7 @@ import Button from "../../Components/Button/Button";
 import ProductCard from "../../Components/ProductCard/ProductCard";
 import { openModal } from "./../../Redux/modal/modalAction";
 
-const Test = ({ uploadProduct }) => {
+const Test = ({ uploadProduct, openModal }) => {
   var [category, setCategory] = useState("");
   var [title, setTitle] = useState("");
   var [cost, setCost] = useState("");
@@ -89,12 +89,19 @@ const Test = ({ uploadProduct }) => {
       <Paragraph fontSize={38} fontWeight="light" color="grey" >This is My Header No 3</Paragraph>
       <Button fontSize={32} fontWeight="bold" background="orange">Click Me and Click Me Again</Button> */}
       {/* <ProductCard /> */}
+
+      <Button onClick={() => openModal({ modalType: "testModal" })}>
+        OPEN TEST MODAL
+      </Button>
       <Button
-        onClick={() => 
-          openModal({ modalType: "testmodal", modalProps: { number: 23 } })
+        onClick={() =>
+          openModal({
+            modalType: "errorModal",
+            modalProps: { error: "something went wrong!" },
+          })
         }
       >
-        Open test modal
+        OPEN ERROR MODAL
       </Button>
     </div>
   );

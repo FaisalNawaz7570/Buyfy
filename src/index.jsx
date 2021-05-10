@@ -6,15 +6,15 @@ import { Router } from "react-router-dom";
 import { Provider } from "react-redux";
 import store from "./Redux/store";
 import myhistory from "./myhistory/myhistory";
+import ModalManager from "./Components/ModalManager/ModalManager";
 // import reportWebVitals from './reportWebVitals';
-
-
 
 ReactDOM.render(
   <React.StrictMode>
-    <Router history={myhistory} >
+    <Router history={myhistory}>
       <Provider store={store}>
-        <App  />
+        <ModalManager />
+        <App />
       </Provider>
     </Router>
   </React.StrictMode>,
